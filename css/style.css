@@ -1,0 +1,1085 @@
+@font-face {
+  font-family: "TEST-regular"; /* Имя шрифта для использования в CSS */
+  src: url("../fonts/TEST-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Плавная замена запасным шрифтом до загрузки */
+}
+@font-face {
+  font-family: "anastasia-script"; /* Имя шрифта для использования в CSS */
+  src: url("../fonts/anastasia-script.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Плавная замена запасным шрифтом до загрузки */
+}
+/* Отступ для основного контента — предотвращает перекрытие шапкой */
+body {
+  padding-top: 91px; /* Высота шапки + небольшой запас */
+  margin: 0; /* Убираем стандартные отступы body */
+}
+
+/* Адаптивный отступ для мобильных устройств */
+@media (max-width: 992px) {
+  body {
+    padding-top: 100px; /* Увеличиваем отступ — на мобильных шапка может стать выше */
+  }
+}
+
+/* Плавная прокрутка страницы */
+html {
+  scroll-behavior: smooth;
+}
+/* Стили для логотипа */
+.brand-name {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: white; /* white */
+}
+
+.brand-slogan {
+  font-family: "PragmaticaLight";
+  font-size: 0.875rem;
+  color: #e6e0f5; /*#e6e0f5 */
+  margin: 0;
+  margin-top: -0.5rem;
+}
+
+/* Стили пунктов меню */
+.navbar .nav-link {
+  font-family: "PragmaticaLight";
+  letter-spacing: 0.0625rem;
+  color: white; /* white */
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #e6e0f5; /* #cccccc; */
+}
+
+/* Отступы для хедера */
+.header .navbar {
+  background: linear-gradient(to top, #800080, #da70d6);
+
+  padding: 1rem 2rem;
+}
+
+/* Адаптивные отступы */
+@media (max-width: 992px) {
+  .header .navbar {
+    padding: 0.75rem 1rem;
+  }
+}
+/* Основной блок-герой — исправляем позиционирование */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 502px;
+  background-image: url("../images/test/1.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Адаптация высоты блока и margin-top под разные экраны */
+@media (max-width: 992px) {
+  .hero-section {
+    height: 400px;
+    margin-top: -18px; /* Увеличиваем отступ для мобильной шапки */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 250px;
+  }
+}
+
+/* Контейнер для контента — улучшенное позиционирование */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  right: 80px;
+  transform: translateY(-50%);
+  text-align: right;
+  z-index: 2;
+}
+
+/* Заголовок */
+.hero-title {
+  font-family: "TEST-regular", sans-serif;
+  font-size: 45px;
+  color: white;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+/* Подзаголовок */
+.hero-subtitle {
+  font-family: "anastasia-script", cursive;
+  font-size: 35px;
+  color: white;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+/* Кнопка */
+.btn-book {
+  display: inline-block;
+  width: 183px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #800080;
+  color: white;
+  font-family: "PragmaticaLight", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 56px; /* для вертикального центрирования текста */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+  background: white;
+  color: #800080;
+}
+
+/* Адаптивность для контента */
+@media (max-width: 992px) {
+  .hero-content {
+    right: 15px;
+  }
+  .hero-title {
+    font-size: 32px;
+  }
+  .hero-subtitle {
+    font-size: 24px;
+  }
+  .btn-book {
+    width: 140px;
+    height: 45px;
+    line-height: 41px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    top: auto;
+    bottom: 20px;
+    right: 10px;
+    transform: none;
+    text-align: left;
+  }
+  .hero-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .btn-book {
+    width: 130px;
+    height: 40px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content {
+    bottom: 15px;
+    right: 8px;
+  }
+  .hero-title {
+    font-size: 20px;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  .btn-book {
+    width: 120px;
+    height: 38px;
+    line-height: 34px;
+    font-size: 14px;
+  }
+}
+/*----------------------------------------------- Общие стили секции "О нас" ----------------------------------------------*/
+.about-section {
+  padding: 80px 0;
+  background-color: #f5f5f5; /* Цвет фона секции белый */
+  color: black; /* Чёрный текст */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.about-tab-content {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 40px 40px 30px;
+  border-left: 6px solid #800080;
+  transition: 0.4s ease;
+}
+.about-tab-content .text-content {
+  border-top: 2px solid #800080;
+  border-bottom: 2px solid #800080;
+  padding: 28px 0;
+}
+
+.section-title {
+  font-family: "PragmaticaLight";
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: black;
+}
+/*.about-section .section-title {
+  color: black !important; 
+}*/
+
+/* Стили для вкладок */
+.about-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #666;
+  position: relative;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.tab-button:hover {
+  color: #800080; /* Светлый лиловый при наведении */
+}
+
+.tab-button.active {
+  color: #800080; /* Активный заголовок — лиловый */
+}
+
+.tab-button.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #800080; /* Подчёркивание лиловым */
+}
+
+/* Стили для контента вкладок */
+.about-tab-content {
+  display: none;
+}
+/* -------------------- ПРЕМИАЛЬНЫЙ ЖУРНАЛЬНЫЙ СТИЛЬ --- */
+.about-tab-content {
+  background: #ffffff;
+  border-radius: 0; /* журнальная строгость */
+  padding: 50px 50px 50px 40px;
+  border-left: 6px solid #800080; /* фирменная линия Flamme */
+  box-shadow: none !important; /* убираем парение */
+  transform: none !important;
+}
+
+/* Внутренний текстовый блок — как колонка журнала */
+.about-tab-content .text-content {
+  padding: 30px 35px;
+  border: 1px solid rgba(128, 0, 128, 0.25); /* тонкая рамка */
+  border-radius: 0; /* строгий editorial стиль */
+  background: #ffffff;
+}
+
+/* Заголовки как в Vogue */
+.part-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+  color: #2a2a2a;
+}
+
+/* Основной текст — премиальная типографика */
+.text-content p,
+.text-content li {
+  font-family: "PragmaticaLight", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+/* Межстрочные интервалы — как в журналах */
+.text-content p + p {
+  margin-top: 18px;
+}
+
+/* Фото — строгая рамка */
+.image-content img {
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+}
+/*------------------------------------*/
+.about-tab-content.active {
+  display: block; /* Показываем активную вкладку */
+}
+
+/* Контейнер для контента (текст + фото) */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Текст слева */
+.text-content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.text-content ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.text-content li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.part-title {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Фото справа */
+.image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .about-tabs {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr; /* На средних экранах — одна колонка */
+  }
+
+  .about-tab-content {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .tab-button {
+    font-size: 1.2rem;
+  }
+
+  .about-tab-content {
+    margin-bottom: 40px;
+    padding: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .text-content,
+  .image-content {
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .text-content p,
+  .text-content li {
+    margin-bottom: 15px;
+  }
+
+  .about-tab-content {
+    padding: 20px;
+  }
+}
+/*------------------------------------------------- Общие стили секции "Наша студия"----------------------------------------- */
+/* Общие стили галереи */
+.studio-gallery {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.section-title {
+  font-family: "TEST-regular";
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: #800080;
+}
+
+/* Контейнер галереи — основная структура */
+.gallery-container {
+  position: relative;
+  height: 467px;
+  overflow: hidden; /* Ключевое свойство — скрывает всё лишнее */
+  border-radius: 24px;
+  box-shadow: 0 8px 25px rgba(128, 0, 128, 0.1);
+  margin: 0 auto;
+  max-width: 860px; /* Максимальная ширина под фото */
+  width: 100%; /* Занимает всю доступную ширину */
+}
+
+.gallery-slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+  width: fit-content; /* Автоматически подбирает ширину под все фото */
+  gap: 0; /* Убираем промежутки между фото */
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-item {
+  width: 860px;
+  height: 376px;
+  flex-shrink: 0;
+  object-fit: cover; /* Заполняет контейнер без искажений */
+  border-radius: 16px;
+}
+
+/* Навигационные стрелки */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(128, 0, 128, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+  opacity: 0.8; /* Начальная прозрачность */
+}
+
+.gallery-nav:hover {
+  background: #800080;
+  opacity: 1; /* Полная непрозрачность при наведении */
+}
+
+.gallery-nav.prev {
+  left: 20px;
+}
+
+.gallery-nav.next {
+  right: 20px;
+}
+
+.gallery-nav svg {
+  color: #eeeeee;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 1200px) {
+  .gallery-container {
+    height: 500px; /* Увеличиваем высоту контейнера */
+  }
+
+  .gallery-item {
+    width: 900px;
+    height: 400px; /* Пропорционально увеличиваем высоту */
+  }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .studio-gallery {
+    padding: 70px 0; /* Уменьшаем отступы секции */
+  }
+
+  .section-title {
+    font-size: 2.3rem; /* Немного уменьшаем заголовок */
+  }
+
+  .gallery-container {
+    height: 420px; /* Уменьшаем высоту контейнера */
+  }
+
+  .gallery-item {
+    width: 750px;
+    height: 330px; /* Сохраняем пропорции */
+  }
+
+  .gallery-nav {
+    width: 50px; /* Уменьшаем кнопки навигации */
+    height: 50px;
+  }
+
+  .gallery-nav svg {
+    width: 22px; /* Немного уменьшаем иконки */
+    height: 22px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .studio-gallery {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2.1rem;
+    margin-bottom: 35px;
+  }
+
+  .gallery-container {
+    height: 380px; /* Уменьшенная высота для планшетов */
+  }
+
+  .gallery-item {
+    width: 650px;
+    height: 285px; /* Соотношение 16:9 */
+  }
+
+  .gallery-nav {
+    left: 15px; /* Ближе к краю */
+    right: 15px;
+    width: 45px; /* Ещё меньше кнопки */
+    height: 45px;
+  }
+
+  .gallery-nav svg {
+    width: 20px; /* Иконки поменьше */
+    height: 20px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .studio-gallery {
+    padding: 50px 0; /* Компактные отступы */
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+    margin-bottom: 30px;
+  }
+
+  .gallery-container {
+    height: 300px; /* Уменьшенная высота под мобильные экраны */
+  }
+
+  .gallery-item {
+    width: 100%; /* На всю ширину контейнера */
+    height: 300px; /* Соответствует высоте контейнера */
+  }
+
+  .gallery-nav {
+    left: 10px; /* Очень близко к краю */
+    right: 10px;
+    width: 45px; /* Маленькие кнопки */
+    height: 45px;
+  }
+
+  .gallery-nav svg {
+    width: 18px; /* Миниатюрные иконки */
+    height: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .studio-gallery {
+    padding: 40px 0; /* Минимальные отступы */
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+  }
+
+  .gallery-container {
+    height: 250px; /* Самая компактная высота */
+    border-radius: 12px; /* Минимальное скругление */
+  }
+
+  .gallery-item {
+    height: 250px; /* Соотношение 1:1 для маленьких экранов */
+  }
+
+  .gallery-nav {
+    left: 8px; /* Максимально близко к краю */
+    right: 8px;
+    width: 40px; /* Крошечные кнопки */
+    height: 40px;
+  }
+
+  .gallery-nav svg {
+    width: 16px; /* Самые маленькие иконки */
+    height: 16px;
+  }
+}
+/*------------------------портфолио----------------------------------------------------*/
+.portfolio-3d {
+  width: 100%;
+  padding: 60px 0;
+  background: #f6daf3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accordion-3d-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.accordion-3d {
+  display: flex;
+  gap: 0.5rem;
+  width: 900px;
+  height: 420px;
+  perspective: 1200px;
+}
+
+.panel {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: all 0.6s ease;
+  transform: rotateY(-25deg);
+  transform-origin: left;
+  filter: blur(3px) brightness(0.7);
+  cursor: pointer;
+}
+
+.panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.panel.active {
+  flex: 4;
+  transform: rotateY(0deg);
+  filter: blur(0) brightness(1);
+  z-index: 5;
+}
+
+/* Стрелки */
+/* Кнопки без кружков */
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Стрелки */
+.arrow {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-top: 3px solid #800080;
+  border-right: 3px solid #800080;
+  transition: 0.3s ease;
+}
+
+/* Левая */
+.arrow-left {
+  transform: rotate(-135deg);
+}
+
+/* Правая */
+.arrow-right {
+  transform: rotate(45deg);
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .nav-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .arrow {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+  }
+}
+
+/* Точки */
+.dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dots .dot {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.dots .dot.active {
+  background: #800080;
+  transform: scale(1.3);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .accordion-3d {
+    width: 100%;
+    height: 260px;
+  }
+}
+/*-----------------------------masters-----------------------------------*/
+/* --- СЕКЦИЯ МАСТЕРА --- */
+.masters-section {
+  width: 100%;
+  height: auto;
+  padding: 60px 0;
+  background: #ffffff;
+  color: #800080;
+}
+
+/* Заголовок */
+.masters-title {
+  text-align: center;
+  font-family: "PragmaticaLight";
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Линия под заголовком */
+.masters-line {
+  width: calc(100% - 560px); /* 280px слева + 280px справа */
+  height: 2px;
+  background: #800080;
+  margin: 0 auto 50px auto;
+}
+
+/* Контейнер с двумя мастерами */
+.masters-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Карточка мастера */
+/* Карточка мастера — фиксированная высота */
+.master-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-between; /* кнопка всегда внизу */
+  width: 50%;
+  min-height: 380px; /* можно менять */
+}
+
+/* Фото мастера */
+.master-photo {
+  width: 260px;
+  height: 286px;
+  object-fit: cover;
+  border-radius: px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Контейнер текста */
+.master-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Кнопка */
+.master-btn {
+  margin-top: 10px;
+  width: 81px;
+  height: 35px;
+  background: #800080;
+  color: #fff;
+  border: none;
+  border-radius: px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  align-self: flex-start; /* чтобы не растягивалась */
+}
+
+.master-btn:hover {
+  background: #a020a0;
+}
+@media (max-width: 768px) {
+  .masters-wrapper {
+    flex-direction: column; /* мастера друг под другом */
+    gap: 50px; /* расстояние между мастерами */
+  }
+
+  .master-card {
+    width: 100%; /* карточка растягивается на всю ширину */
+    flex-direction: column; /* фото сверху, текст снизу */
+    align-items: center; /* центрируем */
+    text-align: center; /* выравниваем текст */
+    margin: 0 auto;
+  }
+
+  .master-info {
+    align-items: center; /* центрируем текст */
+  }
+
+  .master-btn {
+    align-self: center; /* кнопка по центру */
+  }
+}
+/*------------------услуги------------------------------------*/
+/* --- СЕКЦИЯ УСЛУГИ --- */
+.services-section {
+  padding: 80px 0;
+  background: #ffffff;
+  color: #800080;
+}
+
+.services-title {
+  text-align: center;
+  font-family: "PragmaticaLight";
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.services-line {
+  width: calc(100% - 560px);
+  height: 2px;
+  background: #800080;
+  margin: 0 auto 40px auto;
+}
+
+/* Список услуг */
+.services-list {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(128, 0, 128, 0.25);
+  padding-bottom: 10px;
+}
+
+.service-name {
+  font-family: "PragmaticaLight";
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.service-price {
+  font-family: "PragmaticaLight";
+  font-size: 1.1rem;
+  color: #800080;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .services-line {
+    width: 60%;
+  }
+
+  .service-item {
+    font-size: 1rem;
+  }
+}
+/*--------------------------------------коворкинг--------------------*/
+/* --- СЕКЦИЯ КОВОРКИНГ --- */
+.coworking-section {
+  padding: 80px 0;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.coworking-title {
+  text-align: center;
+  font-family: "PragmaticaLight";
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #800080;
+}
+
+.coworking-line {
+  width: calc(100% - 560px);
+  height: 2px;
+  background: #800080;
+  margin: 0 auto 40px auto;
+}
+
+.coworking-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "PragmaticaLight";
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .coworking-line {
+    width: 60%;
+  }
+
+  .coworking-content {
+    font-size: 1rem;
+  }
+}
+/*-----------------------------------------подвал-------------------------------------------------*/
+/* --- ПОДВАЛ САЙТА --- */
+.site-footer {
+  background: linear-gradient(to top, #800080, #da70d6);
+  color: white;
+  padding: 60px 0 20px 0;
+  font-family: "PragmaticaLight";
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Левая колонка */
+.footer-left {
+  max-width: 400px;
+}
+
+.footer-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Соцсети */
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link {
+  font-size: 1.8rem;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.social-link:hover {
+  color: #f3e7ff;
+}
+
+/* Правая колонка */
+.footer-right {
+  max-width: 400px;
+}
+
+.footer-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.footer-map iframe {
+  border-radius: 12px;
+  width: 100%;
+  height: 200px;
+}
+
+/* Нижняя строка */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* --- АДАПТИВ --- */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    max-width: 100%;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+}

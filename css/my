@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "TEST-regular"; /* Имя шрифта для использования в CSS */
+  src: url("../fonts/TEST-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Плавная замена запасным шрифтом до загрузки */
+}
+@font-face {
+  font-family: "anastasia-script"; /* Имя шрифта для использования в CSS */
+  src: url("../fonts/anastasia-script.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Плавная замена запасным шрифтом до загрузки */
+}
+/* Отступ для основного контента — предотвращает перекрытие шапкой */
+body {
+  padding-top: 70px; /* Высота шапки + небольшой запас */
+  margin: 0; /* Убираем стандартные отступы body */
+}
+
+/* Адаптивный отступ для мобильных устройств */
+@media (max-width: 992px) {
+  body {
+    padding-top: 100px; /* Увеличиваем отступ — на мобильных шапка может стать выше */
+  }
+}
+
+/* Плавная прокрутка страницы */
+html {
+  scroll-behavior: smooth;
+}
+/* Стили для логотипа */
+.brand-name {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.brand-slogan {
+  font-family: "PragmaticaLight";
+  font-size: 0.875rem;
+  color: #e6e0f5; /*#a8a8a8 */
+  margin: 0;
+  margin-top: -0.5rem;
+}
+
+/* Стили пунктов меню */
+.navbar .nav-link {
+  font-family: "PragmaticaLight";
+  letter-spacing: 0.0625rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #e6e0f5; /* #cccccc; */
+}
+
+/* Отступы для хедера */
+.header .navbar {
+  background: linear-gradient(
+    to top,
+    #800080,
+    /* Фиолетовый внизу */ #da70d6 /* Орхидейный розовый вверху */
+  );
+
+  padding: 1rem 2rem;
+}
+
+/* Адаптивные отступы */
+@media (max-width: 992px) {
+  .header .navbar {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* HERO — первый блок */
+.hero {
+  width: 100%;
+}
+
+/* Фон */
+.hero-wrapper {
+  width: 100%;
+  height: clamp(22rem, 40vw, 40rem);
+  background-image: url("../images/1.jpg"); /* ← заменишь на свою */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+/* Контейнер */
+.hero-content {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  /*padding-left: clamp(1rem, 4vw, 4rem);*/
+  /*padding-right: clamp(1rem, 4vw, 4rem);*/
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* mobile */
+  text-align: center; /* mobile */
+}
+
+/* Заголовок */
+.hero-title {
+  font-family: "Playfair Display";
+  font-weight: 300;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+/* Подзаголовок */
+.hero-subtitle {
+  font-family: "PragmaticaLight";
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #e6e0f5;
+  margin-bottom: 1.25rem;
+}
+
+/* Кнопка */
+.hero-btn {
+  display: inline-block;
+  font-family: "PragmaticaLight";
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  background-image: linear-gradient(
+    to top,
+    #800080,
+    /* Фиолетовый внизу */ #da70d6 /* Орхидейный розовый вверху */
+  );
+  color: white;
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 9999px;
+  transition: background-image 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: linear-gradient(
+    to top,
+    hsl(300, 100%, 35%),
+    /* Светлее фиолетовый */ hsl(302, 58%, 75%) /* Светлее орхидейный */
+  );
+}
+
+/* TABLET — смещение вправо */
+@media (min-width: 576px) {
+  .hero-content {
+    align-items: flex-end;
+    text-align: right;
+    padding-right: clamp(2rem, 6vw, 4rem);
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 992px) {
+  .hero-content {
+    padding-right: clamp(3rem, 8vw, 6rem);
+  }
+}
+
+/* LARGE DESKTOP */
+@media (min-width: 1400px) {
+  .hero-content {
+    padding-right: clamp(4rem, 10vw, 8rem);
+  }
+}

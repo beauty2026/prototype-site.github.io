@@ -1,0 +1,218 @@
+@font-face {
+  font-family: "TEST-regular"; /* Имя шрифта для использования в CSS */
+  src: url("../fonts/TEST-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Плавная замена запасным шрифтом до загрузки */
+}
+@font-face {
+  font-family: "anastasia-script"; /* Имя шрифта для использования в CSS */
+  src: url("../fonts/anastasia-script.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Плавная замена запасным шрифтом до загрузки */
+}
+/* Отступ для основного контента — предотвращает перекрытие шапкой */
+body {
+  padding-top: 91px; /* Высота шапки + небольшой запас */
+  margin: 0; /* Убираем стандартные отступы body */
+}
+
+/* Адаптивный отступ для мобильных устройств */
+@media (max-width: 992px) {
+  body {
+    padding-top: 100px; /* Увеличиваем отступ — на мобильных шапка может стать выше */
+  }
+}
+
+/* Плавная прокрутка страницы */
+html {
+  scroll-behavior: smooth;
+}
+/* Стили для логотипа */
+.brand-name {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.brand-slogan {
+  font-family: "PragmaticaLight";
+  font-size: 0.875rem;
+  color: #e6e0f5; /*#a8a8a8 */
+  margin: 0;
+  margin-top: -0.5rem;
+}
+
+/* Стили пунктов меню */
+.navbar .nav-link {
+  font-family: "PragmaticaLight";
+  letter-spacing: 0.0625rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #e6e0f5; /* #cccccc; */
+}
+
+/* Отступы для хедера */
+.header .navbar {
+  background: linear-gradient(
+    to top,
+    #800080,
+    /* Фиолетовый внизу */ #da70d6 /* Орхидейный розовый вверху */
+  );
+
+  padding: 1rem 2rem;
+}
+
+/* Адаптивные отступы */
+@media (max-width: 992px) {
+  .header .navbar {
+    padding: 0.75rem 1rem;
+  }
+}
+/* Основной блок-герой — исправляем позиционирование */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 502px;
+  background-image: url("../images/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Адаптация высоты блока и margin-top под разные экраны */
+@media (max-width: 992px) {
+  .hero-section {
+    height: 400px;
+    margin-top: -18px; /* Увеличиваем отступ для мобильной шапки */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 250px;
+  }
+}
+
+/* Контейнер для контента — улучшенное позиционирование */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  text-align: right;
+  z-index: 2;
+}
+
+/* Заголовок */
+.hero-title {
+  font-family: "TEST-regular", sans-serif;
+  font-size: 45px;
+  color: white;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+/* Подзаголовок */
+.hero-subtitle {
+  font-family: "anastasia-script", cursive;
+  font-size: 35px;
+  color: white;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+/* Кнопка */
+.btn-book {
+  display: inline-block;
+  width: 183px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  font-family: "PragmaticaLight", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 56px; /* для вертикального центрирования текста */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+  background: white;
+  color: #800080;
+}
+
+/* Адаптивность для контента */
+@media (max-width: 992px) {
+  .hero-content {
+    right: 15px;
+  }
+  .hero-title {
+    font-size: 32px;
+  }
+  .hero-subtitle {
+    font-size: 24px;
+  }
+  .btn-book {
+    width: 140px;
+    height: 45px;
+    line-height: 41px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    top: auto;
+    bottom: 20px;
+    right: 10px;
+    transform: none;
+    text-align: left;
+  }
+  .hero-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .btn-book {
+    width: 130px;
+    height: 40px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content {
+    bottom: 15px;
+    right: 8px;
+  }
+  .hero-title {
+    font-size: 24px;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  .btn-book {
+    width: 120px;
+    height: 38px;
+    line-height: 34px;
+    font-size: 14px;
+  }
+}
